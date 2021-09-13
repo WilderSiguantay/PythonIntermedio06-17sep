@@ -131,3 +131,81 @@ def recorrer_parametros_arbitrarios(parametro_fijo, *arbitrario, **kwords):
         print('El valor de', clave,'es', kwords[clave])
 
 recorrer_parametros_arbitrarios('ParametroFijo', 'arbitrario 1', 'arbitrario 2', 'arbitrario 3','Arbitrario 4', clave1='valor uno', clave2='valor 2')
+
+#08-09-2021
+
+def calcular(importe, descuento):
+    return importe - (importe*descuento/100)
+
+
+datos = [1500,10]
+resultado = calcular(*datos)
+print("Resultado de valor con descuento ",resultado)
+
+datos = {"descuento":20, "importe":1500}
+
+result = calcular(**datos)
+print("Resultado con valores diccionario:",result)
+
+#Parámetros por omision
+
+def saludar(nombre, mensaje='Hola '):
+    print(mensaje, nombre)
+
+saludar('Rubén', 'Que onda! ')
+saludar(mensaje='Hi! ', nombre='Alexandra')
+
+#Pasar lista como argumento
+
+def frutas(list_frutas):
+    for fruta in list_frutas:
+        print(fruta)
+
+#definir una lista de frutas
+
+fruits = ['manzana','naranja','pera','melocotón']
+
+frutas(fruits)
+
+#FUNCION CONVERTIR A QUETZALES
+
+def convertir_a_quetzales(dolar):
+    return dolar * 7.8
+
+cantidad_dolar = 20
+resultado_conversion = convertir_a_quetzales(cantidad_dolar)
+print("La conversion de ",cantidad_dolar , " dolares a quetzales es: ", resultado_conversion)
+
+
+#Funcion recursiva sin retorno
+
+def cuenta_regresiva(numero):
+    #20
+    if numero > 0:
+        print(numero)
+        numero -=1 #18
+        cuenta_regresiva(numero)
+    else:
+        print('Boooooomm!')
+        print('**********FIN DE LA FUNCIÓN*******', numero)
+
+cuenta_regresiva(20)
+
+#Funcion recursiva con retorno
+
+def factorial(numero):
+    print('Valor inicial ->', numero)
+    if(numero > 1):
+        numero = numero * factorial(numero - 1)
+    print('Valor final ->', numero)
+    return numero
+
+my_factorial = factorial(5)
+print('El factorial es: ', my_factorial)
+
+
+respuesta_usuario = input('De que color es la fruta?')
+
+print(respuesta_usuario)
+
+    
